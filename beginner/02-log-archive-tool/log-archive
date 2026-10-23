@@ -1,0 +1,105 @@
+#!/usr/bin/env bash
+# log-archive - compress a log directory into a timestamped tar.gz
+#
+# Usage: log-archive [options] <log-directory>
+#   -d <dir>    where to store archives   (default: ./log-archives in the current dir)
+#   -k <n>      keep only the newest n archives, delete older ones
+#   -r <target> also copy the archive to a remote server with rsync
+#               e.g. user@host:/backups/logs/
+#   -h          show this help
+
+set -uo pipefail
+
+DEST_DIR="${LOG_ARCHIVE_DIR:-$PWD/log-archives}"
+KEEP=""
+REMOTE=""
+
+usage() { sed -n '2,10p' "$0" | sed 's/^# \{0,1\}//'; }
+die()   { echo "Error: $*" >&2; exit 1; }
+
+while getopts ":d:k:r:h" opt; do
+  case "$opt" in
+    d) DEST_DIR="$OPTARG" ;;
+    k) KEEP="$OPTARG" ;;
+    r) REMOTE="$OPTARG" ;;
+    h) usage; exit 0 ;;
+    :) die "option -$OPTARG needs a value" ;;
+    *) die "unknown option -$OPTARG (see -h)" ;;
+  esac
+done
+shift $((OPTIND - 1))
+
+# --- 1. Check the input --------------------------------------------------------
+[ $# -eq 1 ] || { usage; exit 1; }
+LOG_DIR="${1%/}"
+[ -z "$LOG_DIR" ] && LOG_DIR="/"
+[ -d "$LOG_DIR" ] || die "'$LOG_DIR' is not a directory"
+[ -r "$LOG_DIR" ] || die "cannot read '$LOG_DIR' (try sudo)"
+if [ -n "$KEEP" ]; then
+  case "$KEEP" in ''|*[!0-9]*|0) die "-k needs a number greater than 0" ;; esac
+fi
+
+LOG_DIR="$(cd "$LOG_DIR" && pwd)"
+case "$DEST_DIR" in /*) ;; *) DEST_DIR="$PWD/$DEST_DIR" ;; esac
+
+# Don't archive the archives (checked before creating anything)
+case "$DEST_DIR/" in "$LOG_DIR"/*) die "archive dir must not be inside '$LOG_DIR'" ;; esac
+
+mkdir -p "$DEST_DIR" || die "cannot create '$DEST_DIR'"
+DEST_DIR="$(cd "$DEST_DIR" && pwd)"
+
+# --- 2. Build the archive name ------------------------------------------------
+TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
+ARCHIVE="$DEST_DIR/logs_archive_${TIMESTAMP}.tar.gz"
+HISTORY="$DEST_DIR/archive_log.txt"
+
+# --- 3. Compress --------------------------------------------------------------
+# -C: store paths relative to the parent dir (e.g. "log/syslog", not "/var/log/syslog")
+PARENT="$(dirname "$LOG_DIR")"
+NAME="$(basename "$LOG_DIR")"
+tar -czf "$ARCHIVE" -C "$PARENT" "$NAME" 2> "$DEST_DIR/.tar_errors"
+status=$?
+if [ $status -ne 0 ]; then
+  if [ -s "$ARCHIVE" ] && [ $status -eq 1 ]; then
+    echo "Warning: some files changed while being archived:" >&2
+    cat "$DEST_DIR/.tar_errors" >&2
+  elif [ -s "$ARCHIVE" ]; then
+    echo "Warning: some files could not be read (run with sudo to include them):" >&2
+    head -5 "$DEST_DIR/.tar_errors" >&2
+  else
+    cat "$DEST_DIR/.tar_errors" >&2
+    rm -f "$ARCHIVE" "$DEST_DIR/.tar_errors"
+    die "archiving failed"
+  fi
+fi
+rm -f "$DEST_DIR/.tar_errors"
+
+# --- 4. Record it in the history file -----------------------------------------
+SIZE_IN=$(du -sh "$LOG_DIR" 2>/dev/null | cut -f1)
+SIZE_OUT=$(du -h "$ARCHIVE" | cut -f1)
+echo "$(date '+%Y-%m-%d %H:%M:%S') | $LOG_DIR ($SIZE_IN) -> $(basename "$ARCHIVE") ($SIZE_OUT)" >> "$HISTORY"
+
+echo "Archived $LOG_DIR ($SIZE_IN) -> $ARCHIVE ($SIZE_OUT)"
+
+# --- 5. Optional: keep only the newest N archives -----------------------------
+if [ -n "$KEEP" ]; then
+  # names sort by date, so the oldest come first
+  total=$(ls -1 "$DEST_DIR"/logs_archive_*.tar.gz 2>/dev/null | wc -l | tr -d ' ')
+  extra=$(( total - KEEP ))
+  old=""
+  [ "$extra" -gt 0 ] && old=$(ls -1 "$DEST_DIR"/logs_archive_*.tar.gz | sort | head -n "$extra")
+  for f in $old; do
+    rm -f "$f" && echo "Removed old archive $(basename "$f")"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') | removed $(basename "$f") (keep=$KEEP)" >> "$HISTORY"
+  done
+fi
+
+# --- 6. Optional: copy to a remote server -------------------------------------
+if [ -n "$REMOTE" ]; then
+  if rsync -az "$ARCHIVE" "$REMOTE"; then
+    echo "Uploaded to $REMOTE"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') | uploaded $(basename "$ARCHIVE") -> $REMOTE" >> "$HISTORY"
+  else
+    die "upload to $REMOTE failed (archive is still saved locally)"
+  fi
+fi
