@@ -2,10 +2,7 @@
 
 > Hands-on DevOps projects from the [roadmap.sh DevOps track](https://roadmap.sh/devops/projects) — from shell scripts to service discovery, built and documented in one monorepo.
 
-![Projects](https://img.shields.io/badge/projects-26-blue)
-![Beginner](https://img.shields.io/badge/beginner-11-brightgreen)
-![Intermediate](https://img.shields.io/badge/intermediate-11-yellow)
-![Advanced](https://img.shields.io/badge/advanced-4-red)
+![Projects](https://img.shields.io/badge/projects-26-blue) ![Beginner](https://img.shields.io/badge/beginner-11-brightgreen) ![Intermediate](https://img.shields.io/badge/intermediate-11-yellow) ![Advanced](https://img.shields.io/badge/advanced-4-red)
 
 ## 📖 About
 
@@ -30,15 +27,15 @@ devops-roadmap-projects/
 |---|---|---|---|---|---|
 | 01 | [Server Performance Stats](beginner/01-server-performance-stats) | `CLI` | Write a script to analyse basic server performance stats. | ✅ | [brief](https://roadmap.sh/projects/server-stats) |
 | 02 | [Log Archive Tool](beginner/02-log-archive-tool) | `CLI` | Build a tool to archive logs from the CLI with the date and time. | ✅ | [brief](https://roadmap.sh/projects/log-archive-tool) |
-| 03 | [Nginx Log Analyser](beginner/03-nginx-log-analyser) | `CLI` | Write a simple tool to analyze logs from the command line. | ⬜ | [brief](https://roadmap.sh/projects/nginx-log-analyser) |
-| 04 | [GitHub Pages Deployment](beginner/04-github-pages-deployment) | `CI/CD` | Write a simple GitHub Actions workflow to deploy a static website to GitHub Pages. | ⬜ | [brief](https://roadmap.sh/projects/github-actions-deployment-workflow) |
-| 05 | [SSH Remote Server Setup](beginner/05-ssh-remote-server-setup) | `SSH` | Set up a basic remote Linux server and configure it to allow SSH. | ⬜ | [brief](https://roadmap.sh/projects/ssh-remote-server-setup) |
-| 06 | [Static Site Server](beginner/06-static-site-server) | `Nginx` | Set up a basic Linux server and configure it to serve a static site. | ⬜ | [brief](https://roadmap.sh/projects/static-site-server) |
-| 07 | [Basic DNS Setup](beginner/07-basic-dns-setup) | `DNS` | Purchase a custom domain and set up basic DNS records. | ⬜ | [brief](https://roadmap.sh/projects/basic-dns) |
-| 08 | [Simple Monitoring](beginner/08-simple-monitoring) | `Monitoring` | Set up a basic monitoring dashboard using Netdata. | ⬜ | [brief](https://roadmap.sh/projects/simple-monitoring-dashboard) |
-| 09 | [Dummy Systemd Service](beginner/09-dummy-systemd-service) | `Systemd` | Create a long-running systemd service that logs to a file. | ⬜ | [brief](https://roadmap.sh/projects/dummy-systemd-service) |
-| 10 | [Basic Dockerfile](beginner/10-basic-dockerfile) | `Docker` | Build a basic Dockerfile to create a Docker image. | ⬜ | [brief](https://roadmap.sh/projects/basic-dockerfile) |
-| 11 | [EC2 Instance](beginner/11-ec2-instance) | `AWS` | Create an EC2 instance on AWS and connect to it using SSH. | ⬜ | [brief](https://roadmap.sh/projects/ec2-instance) |
+| 03 | [Nginx Log Analyser](beginner/03-nginx-log-analyser) | `CLI` | Write a simple tool to analyze logs from the command line. | ✅ | [brief](https://roadmap.sh/projects/nginx-log-analyser) |
+| 04 | [GitHub Pages Deployment](beginner/04-github-pages-deployment) | `CI/CD` | Write a simple GitHub Actions workflow to deploy a static website to GitHub Pages. | 🟨 | [brief](https://roadmap.sh/projects/github-actions-deployment-workflow) |
+| 05 | [SSH Remote Server Setup](beginner/05-ssh-remote-server-setup) | `SSH` | Set up a basic remote Linux server and configure it to allow SSH. | 🟨 | [brief](https://roadmap.sh/projects/ssh-remote-server-setup) |
+| 06 | [Static Site Server](beginner/06-static-site-server) | `Nginx` | Set up a basic Linux server and configure it to serve a static site. | 🟨 | [brief](https://roadmap.sh/projects/static-site-server) |
+| 07 | [Basic DNS Setup](beginner/07-basic-dns-setup) | `DNS` | Purchase a custom domain and set up basic DNS records. | 🟨 | [brief](https://roadmap.sh/projects/basic-dns) |
+| 08 | [Simple Monitoring](beginner/08-simple-monitoring) | `Monitoring` | Set up a basic monitoring dashboard using Netdata. | ✅ | [brief](https://roadmap.sh/projects/simple-monitoring-dashboard) |
+| 09 | [Dummy Systemd Service](beginner/09-dummy-systemd-service) | `Systemd` | Create a long-running systemd service that logs to a file. | ✅ | [brief](https://roadmap.sh/projects/dummy-systemd-service) |
+| 10 | [Basic Dockerfile](beginner/10-basic-dockerfile) | `Docker` | Build a basic Dockerfile to create a Docker image. | ✅ | [brief](https://roadmap.sh/projects/basic-dockerfile) |
+| 11 | [EC2 Instance](beginner/11-ec2-instance) | `AWS` | Create an EC2 instance on AWS and connect to it using SSH. | 🟨 | [brief](https://roadmap.sh/projects/ec2-instance) |
 
 ### 🟡 Intermediate
 
@@ -65,7 +62,7 @@ devops-roadmap-projects/
 | 25 | [Multi-Service Application](advanced/25-multi-service-application) | `Docker` | Set up an optimized multi-service Docker implementation. | ⬜ | [brief](https://roadmap.sh/projects/multiservice-docker) |
 | 26 | [Service Discovery](advanced/26-service-discovery) | `DevOps` | Set up service discovery with dummy services and Consul. | ⬜ | [brief](https://roadmap.sh/projects/service-discovery) |
 
-**Legend:** ⬜ Not started · 🟨 In progress · ✅ Done
+**Legend:** ⬜ Not started · 🟨 Built — needs your server / domain / cloud account to run · ✅ Done
 
 ## 🧰 Tech covered
 
@@ -88,4 +85,4 @@ Never commit secrets, keys, `.tfstate` or `.env` files — they are ignored via 
 
 ## 📄 License
 
-[MIT](LICENSE)
+All rights reserved to Mohamed Saouab [MIT](LICENSE)

@@ -1,0 +1,22 @@
+# /etc/systemd/system/dummy.service
+[Unit]
+Description=Dummy background service (roadmap.sh project 09)
+After=network.target
+# give up if it crashes more than 5 times in a minute (these belong in [Unit])
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/dummy.sh
+# restart automatically if it crashes or is killed
+Restart=always
+RestartSec=5
+# stdout/stderr go to the journal -> journalctl -u dummy
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=dummy
+
+[Install]
+# start at boot
+WantedBy=multi-user.target

@@ -1,0 +1,48 @@
+# Project 04 - GitHub Pages Deployment
+# Deploys beginner/04-github-pages-deployment/site to GitHub Pages,
+# only on pushes to main that change the site's index.html.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "beginner/04-github-pages-deployment/site/index.html"
+  workflow_dispatch:        # allow a manual run from the Actions tab
+
+permissions:
+  contents: read
+  pages: write              # publish to Pages
+  id-token: write           # prove the deploy comes from this repo
+
+concurrency:                # never run two deploys at once
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Stamp commit and build time into the page
+        run: |
+          mkdir -p _site
+          cp -r beginner/04-github-pages-deployment/site/. _site/
+          sed -i "s/{{COMMIT}}/${GITHUB_SHA::7}/; s/{{BUILD_TIME}}/$(date -u '+%Y-%m-%d %H:%M UTC')/" _site/index.html
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

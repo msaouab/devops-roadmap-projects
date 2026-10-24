@@ -31,3 +31,7 @@ npm-debug.log*
 # Logs & archives
 *.log
 logs_archive_*.tar.gz
+
+# EC2 project state
+.ec2-state
+!beginner/03-nginx-log-analyser/sample/*.log

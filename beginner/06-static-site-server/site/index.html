@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Static Site Server · Nginx</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/server.svg">
+</head>
+<body>
+  <header>
+    <img src="images/server.svg" alt="Server illustration" width="96" height="96">
+    <h1>Served by Nginx</h1>
+    <p class="lead">A static site on a Linux server, deployed with <code>rsync</code>.</p>
+  </header>
+
+  <main>
+    <section class="cards">
+      <article>
+        <h2>1 · Server</h2>
+        <p>A small Linux VM, reachable over SSH.</p>
+      </article>
+      <article>
+        <h2>2 · Nginx</h2>
+        <p>Serves the files in <code>/var/www/static-site</code> on port 80.</p>
+      </article>
+      <article>
+        <h2>3 · Deploy</h2>
+        <p><code>./deploy.sh</code> syncs only what changed with <code>rsync</code>.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Project 06 · <a href="https://roadmap.sh/projects/static-site-server">roadmap.sh DevOps</a></p>
+  </footer>
+</body>
+</html>

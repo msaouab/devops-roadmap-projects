@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Server">
+  <rect x="14" y="14" width="68" height="26" rx="6" fill="#009639"/>
+  <rect x="14" y="48" width="68" height="26" rx="6" fill="#00b347"/>
+  <circle cx="28" cy="27" r="4" fill="#fff"/><circle cx="40" cy="27" r="4" fill="#fff" opacity=".6"/>
+  <circle cx="28" cy="61" r="4" fill="#fff"/><circle cx="40" cy="61" r="4" fill="#fff" opacity=".6"/>
+  <rect x="54" y="24" width="20" height="6" rx="3" fill="#fff" opacity=".8"/>
+  <rect x="54" y="58" width="20" height="6" rx="3" fill="#fff" opacity=".8"/>
+  <rect x="44" y="76" width="8" height="8" fill="#59636e"/><rect x="26" y="84" width="44" height="4" rx="2" fill="#59636e"/>
+</svg>

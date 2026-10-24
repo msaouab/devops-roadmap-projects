@@ -1,0 +1,12 @@
+# /etc/fail2ban/jail.local - overrides jail.conf (never edit jail.conf directly)
+[DEFAULT]
+# never ban yourself: add your own IP(s) here, space separated
+ignoreip = 127.0.0.1/8 ::1
+
+[sshd]
+enabled  = true
+port     = ssh
+# 5 failed logins within 10 minutes -> banned for 1 hour
+maxretry = 5
+findtime = 10m
+bantime  = 1h

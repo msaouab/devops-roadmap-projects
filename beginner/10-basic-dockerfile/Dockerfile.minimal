@@ -1,0 +1,4 @@
+# The exact requirement from the brief, nothing more:
+#   docker build -f Dockerfile.minimal -t hello-captain-minimal .
+FROM alpine:latest
+CMD ["echo", "Hello, Captain!"]

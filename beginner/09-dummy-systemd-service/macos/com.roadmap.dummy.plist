@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- /Library/LaunchDaemons/com.roadmap.dummy.plist - macOS equivalent of dummy.service -->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.roadmap.dummy</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/usr/local/bin/dummy.sh</string>
+    </array>
+
+    <!-- start at boot (like WantedBy=multi-user.target) -->
+    <key>RunAtLoad</key>
+    <true/>
+
+    <!-- restart if it exits (like Restart=always) -->
+    <key>KeepAlive</key>
+    <true/>
+    <key>ThrottleInterval</key>
+    <integer>5</integer>
+
+    <!-- dummy.sh writes /var/log/dummy-service.log itself; keep launchd's copy of stdout out of the way -->
+    <key>StandardOutPath</key>
+    <string>/dev/null</string>
+    <key>StandardErrorPath</key>
+    <string>/var/log/dummy-service.err</string>
+</dict>
+</plist>
