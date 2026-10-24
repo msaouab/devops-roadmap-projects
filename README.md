@@ -28,7 +28,7 @@ devops-roadmap-projects/
 | 01 | [Server Performance Stats](beginner/01-server-performance-stats) | `CLI` | Write a script to analyse basic server performance stats. | ✅ | [brief](https://roadmap.sh/projects/server-stats) |
 | 02 | [Log Archive Tool](beginner/02-log-archive-tool) | `CLI` | Build a tool to archive logs from the CLI with the date and time. | ✅ | [brief](https://roadmap.sh/projects/log-archive-tool) |
 | 03 | [Nginx Log Analyser](beginner/03-nginx-log-analyser) | `CLI` | Write a simple tool to analyze logs from the command line. | ✅ | [brief](https://roadmap.sh/projects/nginx-log-analyser) |
-| 04 | [GitHub Pages Deployment](beginner/04-github-pages-deployment) | `CI/CD` | Write a simple GitHub Actions workflow to deploy a static website to GitHub Pages. | 🟨 | [brief](https://roadmap.sh/projects/github-actions-deployment-workflow) |
+| 04 | [GitHub Pages Deployment](beginner/04-github-pages-deployment) | `CI/CD` | Write a simple GitHub Actions workflow to deploy a static website to GitHub Pages. | ✅ | [brief](https://roadmap.sh/projects/github-actions-deployment-workflow) |
 | 05 | [SSH Remote Server Setup](beginner/05-ssh-remote-server-setup) | `SSH` | Set up a basic remote Linux server and configure it to allow SSH. | 🟨 | [brief](https://roadmap.sh/projects/ssh-remote-server-setup) |
 | 06 | [Static Site Server](beginner/06-static-site-server) | `Nginx` | Set up a basic Linux server and configure it to serve a static site. | 🟨 | [brief](https://roadmap.sh/projects/static-site-server) |
 | 07 | [Basic DNS Setup](beginner/07-basic-dns-setup) | `DNS` | Purchase a custom domain and set up basic DNS records. | 🟨 | [brief](https://roadmap.sh/projects/basic-dns) |

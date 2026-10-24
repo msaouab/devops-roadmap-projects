@@ -1,6 +1,11 @@
 # Project 04 - GitHub Pages Deployment
 # Deploys beginner/04-github-pages-deployment/site to GitHub Pages,
 # only on pushes to main that change the site's index.html.
+#
+# ONE-TIME SETUP (otherwise configure-pages fails with "Get Pages site failed / Not Found"):
+#   repo Settings -> Pages -> Source: "GitHub Actions"
+#   or: gh api -X POST repos/<owner>/<repo>/pages -f build_type=workflow
+# Pages on a free GitHub plan requires a PUBLIC repository.
 name: Deploy to GitHub Pages
 
 on:

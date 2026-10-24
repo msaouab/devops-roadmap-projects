@@ -1,6 +1,6 @@
 # GitHub Pages Deployment
 
-> **Level:** Beginner · **Topic:** CI/CD · **Status:** 🟨 Ready to run (push to GitHub)<br>
+> **Level:** Beginner · **Topic:** CI/CD · **Status:** ✅ Done · **Live:** [msaouab.github.io/devops-roadmap-projects](https://msaouab.github.io/devops-roadmap-projects/)<br>
 > **Brief:** [roadmap.sh/projects/github-actions-deployment-workflow](https://roadmap.sh/projects/github-actions-deployment-workflow)
 
 ## 🎯 Goal
@@ -12,7 +12,7 @@ Write a GitHub Actions workflow that deploys a static site to GitHub Pages: an i
 - [x] Add a `README.md` explaining the project
 - [x] Add `.github/workflows/deploy.yml`
 - [x] Deploy only on pushes to `main`, and only when `index.html` changes
-- [ ] Site is live at `https://<username>.github.io/<repository-name>/` and updates on each change
+- [x] Site is live at `https://<username>.github.io/<repository-name>/` and updates on each change
 
 ## 🌟 Stretch goals
 - [ ] Build a richer site (e.g. a portfolio) with a static site generator such as Hugo, Jekyll or Astro
