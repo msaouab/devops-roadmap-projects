@@ -44,63 +44,63 @@ devops-roadmap-projects/
 
 | # | Project | Topic | Description | Status | Brief |
 |---|---|---|---|---|---|
-| 12 | [Pomodoro Timer](intermediate/12-pomodoro-timer) | `Frameworks` | Create a pomodoro tracker application for productivity. | ⬜ | [brief](https://roadmap.sh/projects/pomodoro-timer) |
-| 13 | [Configuration Management](intermediate/13-configuration-management) | `Ansible` | Write an Ansible playbook to configure a Linux server. | ⬜ | [brief](https://roadmap.sh/projects/configuration-management) |
-| 14 | [IaC on DigitalOcean](intermediate/14-iac-digitalocean) | `Terraform` | Write Terraform code to create a Droplet on DigitalOcean. | ⬜ | [brief](https://roadmap.sh/projects/iac-digitalocean) |
-| 15 | [Node.js Service Deployment](intermediate/15-nodejs-service-deployment) | `CI/CD` | Use GitHub Actions to deploy a Node.js service to a remote server. | ⬜ | [brief](https://roadmap.sh/projects/nodejs-service-deployment) |
-| 16 | [Dockerized Service](intermediate/16-dockerized-service) | `Docker` | Use GitHub Actions to deploy a Dockerized Node.js service. | ⬜ | [brief](https://roadmap.sh/projects/dockerized-service-deployment) |
-| 17 | [Multi-Container Application](intermediate/17-multi-container-application) | `Docker Compose` | Use Docker Compose to run a multi-container application. | ⬜ | [brief](https://roadmap.sh/projects/multi-container-service) |
-| 18 | [Automated DB Backups](intermediate/18-automated-db-backups) | `Backups` | Set up a scheduled workflow to back up a database every 12 hours. | ⬜ | [brief](https://roadmap.sh/projects/automated-backups) |
-| 19 | [Bastion Host](intermediate/19-bastion-host) | `Networking` | Set up a bastion host for managing access to private infrastructure. | ⬜ | [brief](https://roadmap.sh/projects/bastion-host) |
-| 20 | [File Integrity Checker](intermediate/20-file-integrity-checker) | `Security` | Verify the integrity of application log files to detect tampering. | ⬜ | [brief](https://roadmap.sh/projects/file-integrity-checker) |
-| 21 | [Linux Server Setup](intermediate/21-linux-server-setup) | `Linux` | Learn to set up and secure a Linux server from scratch. | 🟨 | [brief](https://roadmap.sh/projects/linux-server-setup) |
-| 22 | [VPN Server Setup](intermediate/22-vpn-server-setup) | `VPN` | Set up a WireGuard or OpenVPN server to secure remote access. | ⬜ | [brief](https://roadmap.sh/projects/vpn-server-setup) |
+| 17 | [Pomodoro Timer](intermediate/17-pomodoro-timer) | `Frameworks` | Create a pomodoro tracker application for productivity. | ⬜ | [brief](https://roadmap.sh/projects/pomodoro-timer) |
+| 18 | [Configuration Management](intermediate/18-configuration-management) | `Ansible` | Write an Ansible playbook to configure a Linux server. | ⬜ | [brief](https://roadmap.sh/projects/configuration-management) |
+| 19 | [IaC on DigitalOcean](intermediate/19-iac-digitalocean) | `Terraform` | Write Terraform code to create a Droplet on DigitalOcean. | ⬜ | [brief](https://roadmap.sh/projects/iac-digitalocean) |
+| 20 | [Node.js Service Deployment](intermediate/20-nodejs-service-deployment) | `CI/CD` | Use GitHub Actions to deploy a Node.js service to a remote server. | ⬜ | [brief](https://roadmap.sh/projects/nodejs-service-deployment) |
+| 21 | [Dockerized Service](intermediate/21-dockerized-service) | `Docker` | Use GitHub Actions to deploy a Dockerized Node.js service. | ⬜ | [brief](https://roadmap.sh/projects/dockerized-service-deployment) |
+| 22 | [Multi-Container Application](intermediate/22-multi-container-application) | `Docker Compose` | Use Docker Compose to run a multi-container application. | ⬜ | [brief](https://roadmap.sh/projects/multi-container-service) |
+| 23 | [Automated DB Backups](intermediate/23-automated-db-backups) | `Backups` | Set up a scheduled workflow to back up a database every 12 hours. | ⬜ | [brief](https://roadmap.sh/projects/automated-backups) |
+| 24 | [Bastion Host](intermediate/24-bastion-host) | `Networking` | Set up a bastion host for managing access to private infrastructure. | ⬜ | [brief](https://roadmap.sh/projects/bastion-host) |
+| 25 | [File Integrity Checker](intermediate/25-file-integrity-checker) | `Security` | Verify the integrity of application log files to detect tampering. | ⬜ | [brief](https://roadmap.sh/projects/file-integrity-checker) |
+| 26 | [Linux Server Setup](intermediate/26-linux-server-setup) | `Linux` | Learn to set up and secure a Linux server from scratch. | 🟨 | [brief](https://roadmap.sh/projects/linux-server-setup) |
+| 27 | [VPN Server Setup](intermediate/27-vpn-server-setup) | `VPN` | Set up a WireGuard or OpenVPN server to secure remote access. | ⬜ | [brief](https://roadmap.sh/projects/vpn-server-setup) |
 
 ### 🔴 Advanced
 
 | # | Project | Topic | Description | Status | Brief |
 |---|---|---|---|---|---|
-| 23 | [Blue-Green Deployment](advanced/23-blue-green-deployment) | `DevOps` | Set up a blue-green deployment strategy for your application. | ⬜ | [brief](https://roadmap.sh/projects/blue-green-deployment) |
-| 24 | [Prometheus and Grafana](advanced/24-prometheus-and-grafana) | `Monitoring` | Set up monitoring using Prometheus and visualize metrics in Grafana. | ⬜ | [brief](https://roadmap.sh/projects/monitoring) |
-| 25 | [Multi-Service Application](advanced/25-multi-service-application) | `Docker` | Set up an optimized multi-service Docker implementation. | ⬜ | [brief](https://roadmap.sh/projects/multiservice-docker) |
-| 26 | [Service Discovery](advanced/26-service-discovery) | `DevOps` | Set up service discovery with dummy services and Consul. | ⬜ | [brief](https://roadmap.sh/projects/service-discovery) |
+| 36 | [Blue-Green Deployment](advanced/36-blue-green-deployment) | `DevOps` | Set up a blue-green deployment strategy for your application. | ⬜ | [brief](https://roadmap.sh/projects/blue-green-deployment) |
+| 37 | [Prometheus and Grafana](advanced/37-prometheus-and-grafana) | `Monitoring` | Set up monitoring using Prometheus and visualize metrics in Grafana. | ⬜ | [brief](https://roadmap.sh/projects/monitoring) |
+| 38 | [Multi-Service Application](advanced/38-multi-service-application) | `Docker` | Set up an optimized multi-service Docker implementation. | ⬜ | [brief](https://roadmap.sh/projects/multiservice-docker) |
+| 39 | [Service Discovery](advanced/39-service-discovery) | `DevOps` | Set up service discovery with dummy services and Consul. | ⬜ | [brief](https://roadmap.sh/projects/service-discovery) |
 
 ## ☸️ Kubernetes, GitOps & CI/CD track
 
-A follow-up track (projects 27–44) going from a local cluster to a multi-cluster GitOps platform, including CI with both GitHub Actions (30) and Jenkins (44). roadmap.sh has no project list for this, so these briefs are my own, based on current practice and the official docs. They live in the same `beginner/`, `intermediate/` and `advanced/` folders and use the same README format. Kubernetes projects through project 40 are designed to run on a local kind cluster; cloud-based project 41 may incur charges.
+A follow-up track (projects 12–16, 28–35 and 40–44) going from a local cluster to a multi-cluster GitOps platform, including CI with both GitHub Actions (15) and Jenkins (35). roadmap.sh has no project list for this, so these briefs are my own, based on current practice and the official docs. They live in the same `beginner/`, `intermediate/` and `advanced/` folders and use the same README format. Kubernetes projects through project 41 are designed to run on a local kind cluster; cloud-based project 42 may incur charges.
 
 ### 🟢 Beginner
 
 | # | Project | Topic | Description | Status | Reference |
 |---|---|---|---|---|---|
-| 27 | [Local Kubernetes Cluster](beginner/27-local-kubernetes-cluster) | `Kubernetes` | Run a local multi-node cluster with kind and learn the kubectl basics. | ⬜ | [docs](https://kind.sigs.k8s.io/) |
-| 28 | [Deploy an App with Manifests](beginner/28-kubernetes-app-manifests) | `Kubernetes` | Deploy a real API + database with Deployments, Services, ConfigMaps, Secrets and probes. | ⬜ | [docs](https://kubernetes.io/docs/concepts/workloads/) |
-| 29 | [Package an App with Helm](beginner/29-helm-chart) | `Helm` | Turn the manifests from project 28 into a reusable Helm chart with per-environment values. | ⬜ | [docs](https://helm.sh/docs/) |
-| 30 | [CI Pipeline: Build, Test, Scan, Push](beginner/30-ci-build-test-scan-push) | `CI/CD` | A GitHub Actions pipeline that tests the app, builds an image, scans it and pushes it to GHCR. | ⬜ | [docs](https://docs.github.com/en/actions) |
-| 31 | [First GitOps Deployment with Argo CD](beginner/31-first-gitops-argocd) | `GitOps` | Install Argo CD and let it deploy your app from Git — no more kubectl apply. | ⬜ | [docs](https://argo-cd.readthedocs.io/en/stable/getting_started/) |
+| 12 | [Local Kubernetes Cluster](beginner/12-local-kubernetes-cluster) | `Kubernetes` | Run a local multi-node cluster with kind and learn the kubectl basics. | ⬜ | [docs](https://kind.sigs.k8s.io/) |
+| 13 | [Deploy an App with Manifests](beginner/13-kubernetes-app-manifests) | `Kubernetes` | Deploy a real API + database with Deployments, Services, ConfigMaps, Secrets and probes. | ⬜ | [docs](https://kubernetes.io/docs/concepts/workloads/) |
+| 14 | [Package an App with Helm](beginner/14-helm-chart) | `Helm` | Turn the manifests from project 13 into a reusable Helm chart with per-environment values. | ⬜ | [docs](https://helm.sh/docs/) |
+| 15 | [CI Pipeline: Build, Test, Scan, Push](beginner/15-ci-build-test-scan-push) | `CI/CD` | A GitHub Actions pipeline that tests the app, builds an image, scans it and pushes it to GHCR. | ⬜ | [docs](https://docs.github.com/en/actions) |
+| 16 | [First GitOps Deployment with Argo CD](beginner/16-first-gitops-argocd) | `GitOps` | Install Argo CD and let it deploy your app from Git — no more kubectl apply. | ⬜ | [docs](https://argo-cd.readthedocs.io/en/stable/getting_started/) |
 
 ### 🟡 Intermediate
 
 | # | Project | Topic | Description | Status | Reference |
 |---|---|---|---|---|---|
-| 32 | [Multi-Environment GitOps with Kustomize](intermediate/32-kustomize-multi-env-gitops) | `GitOps` | One base, three overlays (dev/staging/prod) and promotion by pull request. | ⬜ | [docs](https://kubectl.docs.kubernetes.io/references/kustomize/) |
-| 33 | [Full CI → GitOps CD Loop](intermediate/33-ci-to-gitops-pipeline) | `CI/CD` | Merge code → image built → config repo updated automatically → Argo CD deploys. | ⬜ | [docs](https://argocd-image-updater.readthedocs.io/) |
-| 34 | [Gateway API, TLS and DNS on Kubernetes](intermediate/34-gateway-api-tls) | `Networking` | Expose apps with the Gateway API and automatic HTTPS certificates from cert-manager. | ⬜ | [docs](https://gateway-api.sigs.k8s.io/) |
-| 35 | [GitOps Secrets Management](intermediate/35-gitops-secrets) | `Security` | Keep secrets out of Git (in plaintext) with Sealed Secrets or External Secrets Operator. | ⬜ | [docs](https://github.com/bitnami-labs/sealed-secrets) |
-| 36 | [App of Apps and ApplicationSets](intermediate/36-argocd-app-of-apps) | `GitOps` | Bootstrap an entire cluster — add-ons and apps — from one root Application. | ⬜ | [docs](https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/) |
-| 37 | [Kubernetes Observability Stack](intermediate/37-k8s-observability-stack) | `Monitoring` | Metrics, logs and alerts for the cluster and your app — installed via GitOps. | ⬜ | [docs](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) |
-| 38 | [Autoscaling and Resilience](intermediate/38-autoscaling-resilience) | `Kubernetes` | Make the app scale with load and survive failures — then prove it with load tests. | ⬜ | [docs](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) |
-| 44 | [Jenkins CI Pipeline](intermediate/44-jenkins-ci-pipeline) | `CI/CD` | Rebuild project 30's test, scan and image-publish pipeline in Jenkins, then compare it with GitHub Actions. | ⬜ | [docs](https://www.jenkins.io/doc/book/pipeline/) |
+| 28 | [Multi-Environment GitOps with Kustomize](intermediate/28-kustomize-multi-env-gitops) | `GitOps` | One base, three overlays (dev/staging/prod) and promotion by pull request. | ⬜ | [docs](https://kubectl.docs.kubernetes.io/references/kustomize/) |
+| 29 | [Full CI → GitOps CD Loop](intermediate/29-ci-to-gitops-pipeline) | `CI/CD` | Merge code → image built → config repo updated automatically → Argo CD deploys. | ⬜ | [docs](https://argocd-image-updater.readthedocs.io/) |
+| 30 | [Gateway API, TLS and DNS on Kubernetes](intermediate/30-gateway-api-tls) | `Networking` | Expose apps with the Gateway API and automatic HTTPS certificates from cert-manager. | ⬜ | [docs](https://gateway-api.sigs.k8s.io/) |
+| 31 | [GitOps Secrets Management](intermediate/31-gitops-secrets) | `Security` | Keep secrets out of Git (in plaintext) with Sealed Secrets or External Secrets Operator. | ⬜ | [docs](https://github.com/bitnami-labs/sealed-secrets) |
+| 32 | [App of Apps and ApplicationSets](intermediate/32-argocd-app-of-apps) | `GitOps` | Bootstrap an entire cluster — add-ons and apps — from one root Application. | ⬜ | [docs](https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/) |
+| 33 | [Kubernetes Observability Stack](intermediate/33-k8s-observability-stack) | `Monitoring` | Metrics, logs and alerts for the cluster and your app — installed via GitOps. | ⬜ | [docs](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) |
+| 34 | [Autoscaling and Resilience](intermediate/34-autoscaling-resilience) | `Kubernetes` | Make the app scale with load and survive failures — then prove it with load tests. | ⬜ | [docs](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) |
+| 35 | [Jenkins CI Pipeline](intermediate/35-jenkins-ci-pipeline) | `CI/CD` | Rebuild project 15's test, scan and image-publish pipeline in Jenkins, then compare it with GitHub Actions. | ⬜ | [docs](https://www.jenkins.io/doc/book/pipeline/) |
 
 ### 🔴 Advanced
 
 | # | Project | Topic | Description | Status | Reference |
 |---|---|---|---|---|---|
-| 39 | [Progressive Delivery with Argo Rollouts](advanced/39-argo-rollouts-progressive-delivery) | `GitOps` | Canary releases that analyse Prometheus metrics and roll back automatically. | ⬜ | [docs](https://argoproj.github.io/argo-rollouts/) |
-| 40 | [Policy as Code and Supply-Chain Security](advanced/40-policy-supply-chain-security) | `Security` | Sign images in CI, generate SBOMs and let Kyverno block anything unsigned or unsafe. | ⬜ | [docs](https://kyverno.io/docs/) |
-| 41 | [Production Cluster: Terraform + GitOps Bootstrap](advanced/41-terraform-k8s-gitops-bootstrap) | `IaC` | Provision a managed Kubernetes cluster with Terraform and hand it to Argo CD on day one. | ⬜ | [docs](https://registry.terraform.io/providers/digitalocean/digitalocean/latest/docs/resources/kubernetes_cluster) |
-| 42 | [Multi-Cluster GitOps Platform](advanced/42-multi-cluster-gitops-platform) | `Platform` | One Argo CD managing several clusters with ApplicationSets, RBAC and sync windows. | ⬜ | [docs](https://argo-cd.readthedocs.io/en/stable/operator-manual/applicationset/Generators-Cluster/) |
-| 43 | [Kubernetes the Hard Way](advanced/43-kubernetes-the-hard-way) | `Kubernetes` | Bootstrap a cluster by hand — certificates, etcd, control plane, kubelets — to truly understand it. | ⬜ | [docs](https://github.com/kelseyhightower/kubernetes-the-hard-way) |
+| 40 | [Progressive Delivery with Argo Rollouts](advanced/40-argo-rollouts-progressive-delivery) | `GitOps` | Canary releases that analyse Prometheus metrics and roll back automatically. | ⬜ | [docs](https://argoproj.github.io/argo-rollouts/) |
+| 41 | [Policy as Code and Supply-Chain Security](advanced/41-policy-supply-chain-security) | `Security` | Sign images in CI, generate SBOMs and let Kyverno block anything unsigned or unsafe. | ⬜ | [docs](https://kyverno.io/docs/) |
+| 42 | [Production Cluster: Terraform + GitOps Bootstrap](advanced/42-terraform-k8s-gitops-bootstrap) | `IaC` | Provision a managed Kubernetes cluster with Terraform and hand it to Argo CD on day one. | ⬜ | [docs](https://registry.terraform.io/providers/digitalocean/digitalocean/latest/docs/resources/kubernetes_cluster) |
+| 43 | [Multi-Cluster GitOps Platform](advanced/43-multi-cluster-gitops-platform) | `Platform` | One Argo CD managing several clusters with ApplicationSets, RBAC and sync windows. | ⬜ | [docs](https://argo-cd.readthedocs.io/en/stable/operator-manual/applicationset/Generators-Cluster/) |
+| 44 | [Kubernetes the Hard Way](advanced/44-kubernetes-the-hard-way) | `Kubernetes` | Bootstrap a cluster by hand — certificates, etcd, control plane, kubelets — to truly understand it. | ⬜ | [docs](https://github.com/kelseyhightower/kubernetes-the-hard-way) |
 
 
 **Legend:** ⬜ Not started · 🟨 Built — needs your server / domain / cloud account to run · ✅ Done

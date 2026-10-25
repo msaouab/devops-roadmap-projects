@@ -126,4 +126,4 @@ No AWS account was available here, so the scripts were run against a **mocked** 
 - **`cloud-init status --wait`** is how you know the user-data script has finished. SSH is usually up before Nginx is installed.
 - **IMDSv2 (`HttpTokens=required`)** protects the instance's metadata and credentials endpoint from SSRF attacks. It's AWS's recommended default.
 - **A security group can't be deleted while an instance still uses it,** so `destroy.sh` waits for termination and then retries.
-- **Stretch ideas:** Route 53 for a domain, `certbot --nginx` for HTTPS, or the same thing in Terraform (project 14).
+- **Stretch ideas:** Route 53 for a domain, `certbot --nginx` for HTTPS, or the same thing in Terraform (project 19).

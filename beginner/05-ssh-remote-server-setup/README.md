@@ -116,7 +116,7 @@ Tested end to end against a real `sshd` on port 2222:
 
 - **Private keys never leave your machine.** Only the `.pub` files are copied, and `*.pem`, `*.key` and `id_*` are in `.gitignore`.
 - **Don't commit your real server IP or `~/.ssh/config`.** The examples use `203.0.113.10`, an address reserved for documentation.
-- Once key login works, the next step is to **disable password login**. That's covered in project 21 (Linux Server Setup).
+- Once key login works, the next step is to **disable password login**. That's covered in project 26 (Linux Server Setup).
 
 ## 📝 Notes & lessons learned
 

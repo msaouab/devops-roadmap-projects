@@ -134,4 +134,4 @@ The macOS path (Homebrew install, `brew services`, `disk.io` chart) wasn't run h
 - **Don't expose port 19999 publicly.** The dashboard has no login by default, so use an SSH tunnel (or Netdata Cloud).
 - **`trap cleanup EXIT INT TERM`** guarantees the load generators stop even if you press Ctrl-C mid-test.
 - **Portable load generation:** CPU = busy loops per core (`nproc` / `sysctl hw.ncpu`), RAM = a Python bytearray, disk = `dd` with a numeric `bs` (`1048576` instead of `1M` or `1m`, which differ between GNU and BSD).
-- **Next step:** Netdata is great for a single machine. For a fleet, use Prometheus + Grafana (project 24).
+- **Next step:** Netdata is great for a single machine. For a fleet, use Prometheus + Grafana (project 37).
