@@ -69,8 +69,6 @@ devops-roadmap-projects/
 
 A follow-up track (projects 27–44) going from a local cluster to a multi-cluster GitOps platform, including CI with both GitHub Actions (30) and Jenkins (44). roadmap.sh has no project list for this, so these briefs are my own, based on current practice and the official docs. They live in the same `beginner/`, `intermediate/` and `advanced/` folders and use the same README format. Kubernetes projects through project 40 are designed to run on a local kind cluster; cloud-based project 41 may incur charges.
 
-**Suggested path:** 27 → 28 → 29 → 30 → 44 → 31 → 32 → 33 → 35 → 36 → 34 → 37 → 38 → 39 → 40 → 41 → 42 → 43
-
 ### 🟢 Beginner
 
 | # | Project | Topic | Description | Status | Reference |
