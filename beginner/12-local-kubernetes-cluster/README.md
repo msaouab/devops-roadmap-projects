@@ -1,13 +1,17 @@
 # Local Kubernetes Cluster
 
-> **Level:** Beginner · **Topic:** Kubernetes · **Status:** ✅ Done<br>
-> **Track:** ☸️ Kubernetes, GitOps & CI/CD · **Builds on:** —<br>
+> **Level:** Beginner · **Topic:** Kubernetes · **Status:** ✅ Done  
+>
+> **Track:** ☸️ Kubernetes, GitOps & CI/CD · **Builds on:** —  
+>
 > **Reference:** [kind](https://kind.sigs.k8s.io/) · [kubectl](https://kubernetes.io/docs/reference/kubectl/)
 
 ## 🎯 Goal
+
 Get a real multi-node Kubernetes cluster running on your laptop (free, disposable) and learn the core `kubectl` workflow: create, inspect, expose, scale, debug and delete.
 
 ## 📋 Requirements
+
 - [x] Install `kubectl` and `kind` (or `k3d`) on macOS/Linux
 - [x] Create a cluster from a config file: **1 control-plane + 2 workers**
 - [x] Run `nginx` as a **Deployment** with 2 replicas and expose it with a **Service**
@@ -18,11 +22,13 @@ Get a real multi-node Kubernetes cluster running on your laptop (free, disposabl
 - [x] Write `up.sh` / `down.sh` scripts that create and destroy the cluster in one command
 
 ## 🌟 Stretch goals
-- [ ] Same cluster with `k3d` or `minikube`; note the differences
-- [ ] Install `k9s` and do everything above from its TUI
-- [ ] Load a locally built image into kind without a registry (`kind load docker-image`)
+
+- [x] Same cluster with `k3d` or `minikube`; note the differences
+- [x] Install `k9s` and do everything above from its TUI
+- [x] Load a locally built image into kind without a registry (`kind load docker-image`)
 
 ## 🎓 What you'll learn
+
 - Cluster anatomy: control plane, nodes, kubelet, pods
 - Declarative (`apply -f`) vs imperative (`kubectl run`) usage
 - The everyday kubectl debugging loop
@@ -119,7 +125,7 @@ kind delete cluster --name roadmap
 | Pod | STATUS | Root cause | Found with |
 |---|---|---|---|
 | `bad-image` | `ErrImagePull` → `ImagePullBackOff` | Image tag `nginx:9.99-doesnotexist` doesn't exist in the registry | `kubectl describe pod` → Events: *"Failed to pull image … not found"* |
-| `crash` | `Error` → `CrashLoopBackOff` (RESTARTS climbing) | The app starts, then exits with code 1: *"ERROR: DATABASE_URL is not set"* | `kubectl logs crash -n web --previous` |
+| `crash` | `Error` → `CrashLoopBackOff` (RESTARTS climbing) | The app exits with code 1: *"ERROR: DATABASE_URL is not set"* | `kubectl logs crash -n web --previous` |
 | `memory-hog` | `OOMKilled` → `CrashLoopBackOff` | Uses ~190 MB with a 50 MiB limit, so the kernel kills it | `kubectl describe pod` → Last State: `Reason: OOMKilled`, `Exit Code: 137` |
 
 - **Why the waits get longer in CrashLoopBackOff:** the kubelet restarts with exponential back-off (10 s, 20 s, 40 s … capped at 5 min), so a broken app doesn't hammer the node.
@@ -130,12 +136,10 @@ kind delete cluster --name roadmap
 
 | Check | Result |
 |---|---|
-| `./up.sh` on macOS (Apple Silicon, kind v0.33, kubectl v1.36, nodes on **Kubernetes v1.37.0**) | 3 nodes Ready; re-run reuses the cluster, all manifests `unchanged`; control-plane tainted `NoSchedule` |
-| nginx Deployment + Service | 2 pods spread across **both** workers (`10.244.2.x` / `10.244.1.x`, one subnet per node); Service ClusterIP `10.96.x` with exactly those 2 pod IPs as backends; Service reached via `port-forward` **and** from inside the cluster by DNS name (`wget http://nginx` → "Welcome to nginx!") |
+| Cluster created from `kind-config.yaml` on macOS (kind v0.33, kubectl v1.36) | 3 nodes Ready; control-plane tainted `NoSchedule` |
+| nginx Deployment + Service | 2 pods on the workers; Service reached via `port-forward` **and** from inside the cluster by DNS name (`wget http://nginx` → "Welcome to nginx!") |
 | All 6 manifests | Pass the **strict** Kubernetes v1.33 JSON schemas (catches misspelled fields) |
 | Cross-checks | Deployment selector ⊆ pod labels, Service selector matches the pods, `targetPort` = `containerPort`, one namespace |
-| `FAST=1 ./demo.sh` on the Mac | 5 pods spread **3 / 2** across the workers; Service picked up all 5 IPs; one pod replaced in **1 s**, all 5 replaced (old ones fully gone) in **2 s**; `apply` took it back from 5 to **2** |
-| `./debug-lab.sh --answers` on the Mac | `bad-image` → `ImagePullBackOff` (image NotFound) · `crash` → `Error`, exit code 1, 3 restarts in 45 s · `memory-hog` → `OOMKilled`, exit code **137** |
 | memory-hog payload | Measured ~193 MB peak vs the 50 MiB limit, so it really gets OOMKilled |
 | All scripts | `shellcheck` clean |
 
@@ -146,7 +150,6 @@ kind delete cluster --name roadmap
 - **Declarative beats imperative.** `kubectl scale` worked until the next `apply` silently undid it. Keep the files as the single source of truth; GitOps (project 16) enforces this automatically.
 - **Pin image versions** (`nginx:1.27-alpine`, not `latest`) so every `apply` runs exactly the same thing.
 - **Always set requests and limits.** Requests make scheduling realistic; limits stop one pod from starving the node, as memory-hog showed.
-- **Containers that die in milliseconds can lose their logs.** containerd removes the finished container before `kubectl logs --previous` asks for it, and kubectl then prints *"unable to retrieve container logs"* as if it were a log line. Real apps usually run a moment before failing; for instant crashes, check `describe` → Last State, or ship logs to a central store (project 33).
-- **Short-lived `kubectl run -it` pods lose their output** if the command finishes before the terminal attaches. Use `-i` with a short `sleep`, or open a shell (`-- sh`).
+- **Short-lived** `kubectl run -it` **pods lose their output** if the command finishes before the terminal attaches. Use `-i` with a short `sleep`, or open a shell (`-- sh`).
 - **Scripts should pin the kube context** (`kubectl --context kind-roadmap`), so a forgotten context switch can't send commands to the wrong cluster.
 - **kind vs real clusters:** nodes have no external IP and live on a private Docker network, so `port-forward` is how you reach apps. Gateway API (project 30) is the production way.
