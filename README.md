@@ -73,7 +73,7 @@ A follow-up track (projects 12–16, 28–35 and 40–44) going from a local clu
 
 | # | Project | Topic | Description | Status | Reference |
 |---|---|---|---|---|---|
-| 12 | [Local Kubernetes Cluster](beginner/12-local-kubernetes-cluster) | `Kubernetes` | Run a local multi-node cluster with kind and learn the kubectl basics. | ⬜ | [docs](https://kind.sigs.k8s.io/) |
+| 12 | [Local Kubernetes Cluster](beginner/12-local-kubernetes-cluster) | `Kubernetes` | Run a local multi-node cluster with kind and learn the kubectl basics. | ✅ | [docs](https://kind.sigs.k8s.io/) |
 | 13 | [Deploy an App with Manifests](beginner/13-kubernetes-app-manifests) | `Kubernetes` | Deploy a real API + database with Deployments, Services, ConfigMaps, Secrets and probes. | ⬜ | [docs](https://kubernetes.io/docs/concepts/workloads/) |
 | 14 | [Package an App with Helm](beginner/14-helm-chart) | `Helm` | Turn the manifests from project 13 into a reusable Helm chart with per-environment values. | ⬜ | [docs](https://helm.sh/docs/) |
 | 15 | [CI Pipeline: Build, Test, Scan, Push](beginner/15-ci-build-test-scan-push) | `CI/CD` | A GitHub Actions pipeline that tests the app, builds an image, scans it and pushes it to GHCR. | ⬜ | [docs](https://docs.github.com/en/actions) |

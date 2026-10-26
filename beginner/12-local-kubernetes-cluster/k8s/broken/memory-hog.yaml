@@ -1,0 +1,15 @@
+# Broken on purpose (debugging lab): uses more memory than its limit.
+# Expected: OOMKilled (exit code 137) -> CrashLoopBackOff
+apiVersion: v1
+kind: Pod
+metadata:
+  name: memory-hog
+  namespace: web
+spec:
+  containers:
+    - name: app
+      image: busybox:1.36
+      command: ["sh", "-c", "echo 'filling memory...'; head -c 200m /dev/zero | tail"]
+      resources:
+        limits:
+          memory: 50Mi

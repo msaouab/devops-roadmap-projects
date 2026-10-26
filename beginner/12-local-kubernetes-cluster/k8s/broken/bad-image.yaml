@@ -1,0 +1,11 @@
+# Broken on purpose (debugging lab): the image tag does not exist.
+# Expected: ErrImagePull -> ImagePullBackOff
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bad-image
+  namespace: web
+spec:
+  containers:
+    - name: app
+      image: nginx:9.99-doesnotexist

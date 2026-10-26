@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  namespace: web
+  labels:
+    app: nginx
+spec:
+  replicas: 2                  # how many copies to keep running
+  selector:
+    matchLabels:
+      app: nginx               # "the pods I manage are the ones labelled app=nginx"
+  template:                    # the blueprint for each pod
+    metadata:
+      labels:
+        app: nginx             # must match the selector above
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.27-alpine
+          ports:
+            - containerPort: 80
+          resources:
+            requests:          # what the scheduler reserves for the pod
+              cpu: 50m         # 50 millicores = 5% of one CPU
+              memory: 32Mi
+            limits:            # the hard ceiling
+              cpu: 200m
+              memory: 64Mi
